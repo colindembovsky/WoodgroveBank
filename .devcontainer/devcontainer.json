@@ -39,12 +39,16 @@
 		  "label": "Orleans Dashboard",
 		  "onAutoForward": "notify"
 		},
+		"5000": {
+			"label": "Bank API",
+			"onAutoForward": "notify"
+		  },
 		"5001": {
 		  "label": "Bank Admin",
 		  "onAutoForward": "notify"
 		},
 		"5002": {
-		  "label": "Bank API",
+		  "label": "Bank ATM",
 		  "onAutoForward": "notify"
 		}
 		,
