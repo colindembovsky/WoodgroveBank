@@ -39,8 +39,8 @@ services:
     hostname: admin
     ports:
       - 5001:80
-      - 11111:11111
-      - 30000:30000
+      - 11112:11111
+      - 30002:30000
 
   atm:
     image: woodgrovebank-atm:latest
@@ -52,8 +52,8 @@ services:
     hostname: atm
     ports:
       - 5002:80
-      - 11111:11111
-      - 30000:30000
+      - 11113:11111
+      - 30003:30000
 
   dashboard:
     image: woodgrovebank-dashboard:latest
@@ -65,8 +65,8 @@ services:
     hostname: api
     ports:
       - 5003:80
-      - 11111:11111
-      - 30000:30000
+      - 11114:11111
+      - 30004:30000
 
   orleans-scaler:
     image: orleans-scaler:latest
@@ -78,6 +78,6 @@ services:
     hostname: orleans-scaler
     ports:
       - 80:80
-      - 11111:11111
-      - 30000:30000
+      - 11115:11111
+      - 30005:30000
       
