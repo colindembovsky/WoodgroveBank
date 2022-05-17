@@ -24,19 +24,11 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [80, 11111, 30000, 5001, 5002, 5003],
+	"forwardPorts": [80, 5000, 5001, 5002, 5003],
 
 	"portsAttributes": {
-		"11111": {
-		  "label": "SiloPort",
-		  "onAutoForward": "silent"
-		},
-		"30000": {
-		  "label": "GatewayPort",
-		  "onAutoForward": "notify"
-		},
 		"80": {
-		  "label": "Orleans Dashboard",
+		  "label": "Bank Dashboard",
 		  "onAutoForward": "notify"
 		},
 		"5000": {
@@ -53,7 +45,7 @@
 		}
 		,
 		"5003": {
-		  "label": "Bank Dashboard",
+		  "label": "Orleans Dashboard",
 		  "onAutoForward": "notify"
 		}
 	  },
