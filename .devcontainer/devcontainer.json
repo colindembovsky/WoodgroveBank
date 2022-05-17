@@ -28,7 +28,7 @@
 
 	"portsAttributes": {
 		"80": {
-		  "label": "Bank Dashboard",
+		  "label": "Orleans Scaler",
 		  "onAutoForward": "notify"
 		},
 		"5000": {
