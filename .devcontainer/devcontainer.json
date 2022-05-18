@@ -27,10 +27,6 @@
 	"forwardPorts": [80, 5000, 5001, 5002, 5003],
 
 	"portsAttributes": {
-		"80": {
-		  "label": "Orleans Scaler",
-		  "onAutoForward": "notify"
-		},
 		"5000": {
 			"label": "Bank API",
 			"onAutoForward": "notify"
@@ -39,12 +35,7 @@
 		  "label": "Bank Admin",
 		  "onAutoForward": "notify"
 		},
-		"5002": {
-		  "label": "Bank ATM",
-		  "onAutoForward": "notify"
-		}
-		,
-		"5003": {
+		"8080": {
 		  "label": "Orleans Dashboard",
 		  "onAutoForward": "notify"
 		}
@@ -74,7 +65,8 @@
 	//      "mounts": [ "source=${env:HOME}${env:USERPROFILE}/.aspnet/https,target=/home/vscode/.aspnet/https,type=bind" ],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
+	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
+	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
 
 	"waitFor": "onCreateCommand",
 
