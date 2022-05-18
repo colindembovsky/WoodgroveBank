@@ -6,7 +6,7 @@ echo "on-create start"
 echo "$(date)    on-create start" >> "$HOME/status"
 
 echo "create k3d cluster"
-#alias k=kubectl
+alias k=kubectl
 k3d registry create myregistry.localhost --port 12345
 k3d cluster create --registry-use k3d-myregistry.localhost:12345
 
@@ -23,13 +23,13 @@ helm repo update
 helm install keda kedacore/keda --namespace woodgrovebank01
 
 echo "install azurerite"
-kubectl apply -f ./k8s/azurerite.yaml
+kubectl apply -f ./k8s/azurite.yaml
 
 echo "build the containers"
-#docker-compose build
+docker-compose build
 
 echo "push the containers to the local registry"
-#docker-compose push
+docker-compose push
 
 echo "on-create complete"
 echo "$(date +'%Y-%m-%d %H:%M:%S')    on-create complete" >> "$HOME/status"
