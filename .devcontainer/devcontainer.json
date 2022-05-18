@@ -74,7 +74,9 @@
 	//      "mounts": [ "source=${env:HOME}${env:USERPROFILE}/.aspnet/https,target=/home/vscode/.aspnet/https,type=bind" ],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "alias k=kubectl && k3d cluster create",
+	"postCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
+
+	"waitFor": "onCreateCommand",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
