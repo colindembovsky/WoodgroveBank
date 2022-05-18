@@ -7,7 +7,8 @@ echo "$(date)    on-create start" >> "$HOME/status"
 
 echo "create k3d cluster"
 #alias k=kubectl
-#k3d cluster create
+k3d registry create myregistry.localhost --port 12345
+k3d cluster create newcluster --registry-use k3d-myregistry.localhost:12345
 
 echo "create namespace"
 #kubectl create namespace woodgrovebank01

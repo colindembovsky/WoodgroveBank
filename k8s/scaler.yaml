@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: orleans-scaler
-        image: orleans-scaler:latest
+        image: k3d-myregistry.localhost:12345/orleans-scaler:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 80

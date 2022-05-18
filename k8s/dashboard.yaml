@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: woodgrovebank-dashboard
-        image: woodgrovebank-dashboard:latest
+        image: k3d-myregistry.localhost:12345/woodgrovebank-dashboard:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 80

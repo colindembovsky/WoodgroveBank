@@ -6,9 +6,9 @@ echo "post-create start"
 echo "$(date)    post-create start" >> "$HOME/status"
 
 echo "create the services and deployments"
-kubectl apply -f ./k8s/admin.yaml
-kubectl apply -f ./k8s/api.yaml
-kubectl apply -f ./k8s/dashboard.yaml
+kubectl apply -f ./k8s/admin.yaml --wait
+kubectl apply -f ./k8s/api.yaml --wait
+kubectl apply -f ./k8s/dashboard.yaml --wait
 
 echo "set up port forwarding"
 kubectl port-forward service/woodgrovebank-admin 5001:80
