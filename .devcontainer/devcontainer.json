@@ -1,16 +1,9 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.233.0/containers/dotnet
 {
-	"name": "C# (.NET)",
+	"name": "k3d",
 	"build": {
-		"dockerfile": "Dockerfile",
-		"args": { 
-			// Update 'VARIANT' to pick a .NET Core version: 3.1, 5.0, 6.0
-			// Append -bullseye or -focal to pin to an OS version.
-			"VARIANT": "6.0-bullseye",
-			// Options
-			"NODE_VERSION": "lts/*"
-		}
+		"dockerfile": "Dockerfile"
 	},
 
 	// Set *default* container specific settings.json values on container create.
@@ -24,13 +17,13 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [80, 5000, 5001, 5002, 5003],
+	"forwardPorts": [8080, 5000, 5001, 8080],
 
 	"portsAttributes": {
 		"5000": {
 			"label": "Bank API",
 			"onAutoForward": "notify"
-		  },
+		},
 		"5001": {
 		  "label": "Bank Admin",
 		  "onAutoForward": "notify"
@@ -64,11 +57,10 @@
 	//    * If only using Remote - Containers with a local container, uncomment this line instead:
 	//      "mounts": [ "source=${env:HOME}${env:USERPROFILE}/.aspnet/https,target=/home/vscode/.aspnet/https,type=bind" ],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
 	"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
 	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
 
-	"waitFor": "onCreateCommand",
+	"waitFor": "postCreateCommand",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
