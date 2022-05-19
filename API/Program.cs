@@ -28,7 +28,7 @@ app.MapGet("/customers", async (IGrainFactory grainFactory) => {
         var y = 32;
         var res = x/y;
         Console.WriteLine($"res: {res}");
-        await grainFactory.GetGrain<IBankGrain>(Guid.Empty).GetCustomers();
+        return await grainFactory.GetGrain<IBankGrain>(Guid.Empty).GetCustomers();
     }
 )
 .WithTags("Customers")

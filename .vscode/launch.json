@@ -12,7 +12,7 @@
             "containerName": "woodgrovebank-api-1"
         },
         {
-            "name": "Attach Api (Kubernetes)",
+            "name": "Attach (Kubernetes)",
             "type": "coreclr",
             "request": "attach",
             "processName": "dotnet",
