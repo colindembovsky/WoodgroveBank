@@ -10,6 +10,22 @@
                 "/src": "${workspaceFolder}"
             },
             "containerName": "woodgrovebank-api-1"
+        },
+        {
+            "name": "Attach Api (Kubernetes)",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "dotnet",
+            "sourceFileMap": {
+                "/src": "${workspaceFolder}"
+            },
+            "pipeTransport": {
+                "pipeProgram": "kubectl",
+                "pipeArgs": [ "exec", "-i", "${command:extension.vsKubernetesSelectPod}", "--" ],
+                "pipeCwd": "${workspaceRoot}",
+                "debuggerPath": "/vsdbg/vsdbg",
+                "quoteArgs": false
+            },
         }
     ]
 }
