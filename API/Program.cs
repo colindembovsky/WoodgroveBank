@@ -23,8 +23,13 @@ if (app.Environment.IsDevelopment())
 /// <summary>
 /// Get a list of all the customers.
 /// </summary>
-app.MapGet("/customers", async (IGrainFactory grainFactory) =>
-    await grainFactory.GetGrain<IBankGrain>(Guid.Empty).GetCustomers()
+app.MapGet("/customers", async (IGrainFactory grainFactory) => {
+        var x = 1200;
+        var y = 32;
+        var res = x/y;
+        Console.WriteLine($"res: {res}");
+        await grainFactory.GetGrain<IBankGrain>(Guid.Empty).GetCustomers();
+    }
 )
 .WithTags("Customers")
 .WithName("GetCustomers");
