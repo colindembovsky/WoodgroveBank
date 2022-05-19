@@ -12,9 +12,9 @@ kubectl apply -f ./k8s/api.yaml --wait
 kubectl apply -f ./k8s/dashboard.yaml --wait
 
 echo "set up port forwarding"
-kubectl port-forward service/woodgrovebank-admin 5001:80
-kubectl port-forward service/woodgrovebank-api 5000:80
-kubectl port-forward service/woodgrovebank-dashboard 8080:80
+kubectl port-forward service/woodgrovebank-admin 5001:80 &
+kubectl port-forward service/woodgrovebank-api 5000:80 &
+kubectl port-forward service/woodgrovebank-dashboard 8080:80 &
 
 echo "post-create complete"
 echo "$(date +'%Y-%m-%d %H:%M:%S')    post-create complete" >> "$HOME/status"
